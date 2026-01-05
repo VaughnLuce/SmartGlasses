@@ -186,6 +186,7 @@ Add permissions for:
 - Internet access
 
 CHECK AndroidManifest.xml CODE FOR CLARIFICATION... include these
+
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET" />
 
