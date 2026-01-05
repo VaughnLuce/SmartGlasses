@@ -114,7 +114,9 @@ This README documents progress so the project can be reproduced, extended, and r
 - `app/build.gradle.kts` – API key injection via BuildConfig
 - `activity_main.xml` – UI layout
 
-## Step-by-Step Setup (Use the **Project** View in Android Studio)
+---
+
+### Step-by-Step Setup (Use the **Project** View in Android Studio)
 
 > **Important:** These instructions assume you are using Android Studio’s **Project** dropdown (not the Android view).  
 > In Android Studio (top-left panel), change the dropdown to: **Project**.
