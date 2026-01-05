@@ -169,11 +169,7 @@ CHECK build.gradle.kts CODE FOR CLARIFICATION
 ```kotlin
 import java.util.Properties  // (very top of file)
 
-buildConfigField(
-    "String",
-    "GEMINI_API_KEY",
-    "\"$geminiApiKey\""
-)
+buildConfigField("String", "GEMINI_API_KEY","\"$geminiApiKey\"")
 
 buildFeatures {
     buildConfig = true
