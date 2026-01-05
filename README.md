@@ -199,6 +199,7 @@ CHECK AndroidManifest.xml CODE FOR CLARIFICATION... include these
 This is where the main button is defined (the one used to trigger listening / AI requests).
 COPY THIS CODE
 ---
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -214,6 +215,7 @@ COPY THIS CODE
         android:text="Press to Speak" />
 
 </LinearLayout>
+```
 
 ---
 
