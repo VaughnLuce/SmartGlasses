@@ -13,25 +13,96 @@ The end goal is a **lightweight, low-power wearable system** that listens only w
 ## High-Level System Architecture
 
 Below is a simplified overview of how the system communicates:
-[ User ]
-|
-| (voice)
-v
-[ Microphone on Glasses ]
-|
-| (audio over Bluetooth)
-v
-[ Phone / Android App ]
-|
-| (speech → text)
-| (text → AI request)
-v
-[ Gemini AI API ]
-|
-| (text response)
-v
-[ Android App ]
-|
-| (text → speech)
-v
-[ Speaker on Glasses ]
+
+### System Communication Overview
+
+1. The user presses a button on the glasses and speaks.
+2. Audio is captured by the glasses’ microphone.
+3. The audio is transmitted to the phone via Bluetooth.
+4. The Android app converts speech to text.
+5. The text is sent to the Gemini AI API.
+6. Gemini generates a text response.
+7. The Android app converts the response to speech.
+8. Audio is played back to the user through the glasses’ speaker.
+
+
+**Key idea:**  
+The glasses remain lightweight and power-efficient, while the phone handles speech recognition, AI communication, and text-to-speech.
+
+---
+
+## Development Progress (Steps Completed So Far)
+
+### 1. Android Development Environment
+- Installed Android Studio
+- Created a Kotlin-based Android project using XML layouts
+- Configured minimum SDK and testing environment
+
+### 2. App Permissions & Setup
+- Added microphone permission
+- Added internet permission
+- Implemented runtime permission handling for audio recording
+
+### 3. User Interface
+- Created a simple UI with a single button
+- Button states indicate:
+  - Ready to talk
+  - Listening
+  - Processing AI request
+
+### 4. Speech Input
+- Implemented on-device speech-to-text using Android’s speech services
+- App listens only when the user presses the button
+- Captured spoken input as plain text
+
+### 5. AI Integration
+- Connected the app to the Gemini API
+- Sent spoken input as a text prompt
+- Limited both input size and output length for efficiency
+- Received concise AI-generated text responses
+
+### 6. Audio Output
+- Implemented text-to-speech on the phone
+- AI responses are spoken aloud to the user
+- Voice selection handled through device TTS settings
+
+### 7. API Key Security
+- API key stored outside source control
+- Injected securely into the app at build time
+- Ensured keys are not committed to GitHub
+
+### 8. App Flow Coordination
+- Button press → speech capture
+- Speech result → AI request
+- AI response → spoken audio
+- UI resets after each interaction
+
+---
+
+## Current State
+
+At this stage, the **entire voice → AI → spoken response pipeline works on the phone**.  
+The next phase of the project will focus on:
+
+- Bluetooth communication between glasses and phone
+- Microcontroller integration (ESP32)
+- External microphone and speaker hardware
+- Power optimization for wearable use
+
+---
+
+## Future Work
+
+- Bluetooth audio or data streaming from glasses to phone
+- Custom PCB for wearable hardware
+- Wake-word or low-power trigger alternatives
+- Optional camera integration
+- Improved noise isolation for wearable microphone
+- Standalone operation where possible
+
+---
+
+## Project Status
+
+🚧 **In active development**  
+This README documents progress so the project can be reproduced, extended, and refined over time.
