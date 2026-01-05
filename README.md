@@ -165,7 +165,8 @@ In this file, you will:
 - Inject `GEMINI_API_KEY` into `BuildConfig`
 
 CHECK build.gradle.kts CODE FOR CLARIFICATION
-
+---
+'''xml
 import java.util.Properties //(very top of file)
 
 buildConfigField("String", "GEMINI_API_KEY", "\"$geminiApiKey\"")
