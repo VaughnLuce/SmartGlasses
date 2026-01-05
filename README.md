@@ -221,39 +221,13 @@ COPY THIS CODE
 
 ---
 
-### 7) Create Helper Package Folders (Inside Your App Package)
-**Project panel click path:**
-- **(Project Root)** → `app` → `src` → `main` → `java` → `com` → `example` → `smartglasses`
-
-Inside `smartglasses`, create these folders (packages):
-- `speech`
-- `gemini`
-- `tts`
-
-How to create each folder:
-1. Right click `smartglasses`
-2. **New** → **Package**
-3. Name it (example): `speech`
-4. Repeat for `gemini` and `tts`
-
----
-
-### 8) Add the Helper Files Into Those Packages
-**Project panel click path (examples):**
-- `.../smartglasses/speech/` → add your speech-to-text file
-- `.../smartglasses/gemini/` → add your Gemini API client file
-- `.../smartglasses/tts/` → add your text-to-speech helper file
-
-How to add a Kotlin file:
-1. Right click the package folder (ex: `speech`)
-2. **New** → **Kotlin Class/File**
-3. Paste your code into the new file
+When adding helper classes, Android Studio will automatically create the required package folders based on the package name declared at the top of each Kotlin file.
 
 ---
 
 ### 9) Paste/Use Your Main Code
 **Project panel click path:**
-- **(Project Root)** → `app` → `src` → `main` → `java` → `com` → `example` → `smartglasses` → `MainActivity.kt`
+- **(Project Root)** → `app` → `src` → `main` → `java` → `MainActivity.kt`
 
 Paste your main app logic here (button control → speech-to-text → Gemini → text-to-speech).
 
@@ -282,5 +256,5 @@ Paste your main app logic here (button control → speech-to-text → Gemini →
   `Project Root → app → src → main → res → layout → activity_main.xml`
 
 - **Kotlin Source Code:**  
-  `Project Root → app → src → main → java → com → example → smartglasses`
+  `Project Root → app → src → main → java → main`
 
