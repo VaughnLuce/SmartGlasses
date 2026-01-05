@@ -13,4 +13,25 @@ The end goal is a **lightweight, low-power wearable system** that listens only w
 ## High-Level System Architecture
 
 Below is a simplified overview of how the system communicates:
-
+[ User ]
+|
+| (voice)
+v
+[ Microphone on Glasses ]
+|
+| (audio over Bluetooth)
+v
+[ Phone / Android App ]
+|
+| (speech → text)
+| (text → AI request)
+v
+[ Gemini AI API ]
+|
+| (text response)
+v
+[ Android App ]
+|
+| (text → speech)
+v
+[ Speaker on Glasses ]
