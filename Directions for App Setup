@@ -28,7 +28,6 @@
 You should now see folders like:
 - `.gradle/`
 - `app/`
-- `gradle/`
 - `build.gradle(.kts)` files
 
 ---
@@ -43,9 +42,7 @@ If `local.properties` does not exist:
 3. Name it: `local.properties`
 
 Add your key (example format):
-- `GEMINI_API_KEY=YOUR_KEY_HERE`
-
-> Do not commit `local.properties` to GitHub.
+- `GEMINI_API_KEY=YOUR_KEY_HERE` (no spaces)
 
 ---
 
@@ -58,6 +55,15 @@ In this file, you will:
 - Read `local.properties`
 - Inject `GEMINI_API_KEY` into `BuildConfig`
 
+*CHECK build.gradle.kts CODE FOR CLARIFICATION*
+import java.util.Properties (very top of file)
+...
+buildConfigField("String", "GEMINI_API_KEY", "\"$geminiApiKey\"")
+    // ✅ One buildFeatures block only
+    buildFeatures {
+        buildConfig = true
+        compose = true
+    }
 ---
 
 ### 5) Add Permissions in `AndroidManifest.xml`
@@ -68,6 +74,10 @@ Add permissions for:
 - Microphone recording
 - Internet access
 
+CHECK AndroidManifest.xml CODE FOR CLARIFICATION... include these
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
 ---
 
 ### 6) Create the UI Layout (Button) in `activity_main.xml`
@@ -75,6 +85,23 @@ Add permissions for:
 - **(Project Root)** → `app` → `src` → `main` → `res` → `layout` → `activity_main.xml`
 
 This is where the main button is defined (the one used to trigger listening / AI requests).
+COPY THIS CODE
+---
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/buttonRecord"
+        android:layout_width="175dp"
+        android:layout_height="242dp"
+        android:text="Press to Speak" />
+
+</LinearLayout>
 
 ---
 
