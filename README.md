@@ -165,17 +165,22 @@ In this file, you will:
 - Inject `GEMINI_API_KEY` into `BuildConfig`
 
 CHECK build.gradle.kts CODE FOR CLARIFICATION
----
-'''xml
-import java.util.Properties //(very top of file)
 
-buildConfigField("String", "GEMINI_API_KEY", "\"$geminiApiKey\"")
+```kotlin
+import java.util.Properties  // (very top of file)
 
-    // ✅ One buildFeatures block only
-    buildFeatures {
-        buildConfig = true
-        compose = true
-    }
+buildConfigField(
+    "String",
+    "GEMINI_API_KEY",
+    "\"$geminiApiKey\""
+)
+
+buildFeatures {
+    buildConfig = true
+    compose = true
+}
+```
+
 ---
 
 ### 5) Add Permissions in `AndroidManifest.xml`
